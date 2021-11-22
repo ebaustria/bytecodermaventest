@@ -6,8 +6,8 @@
 	<name>bytecodermaventest</name>
 
 	<properties>
-		<maven.compiler.source>11</maven.compiler.source>
-		<maven.compiler.target>11</maven.compiler.target>
+		<maven.compiler.source>15</maven.compiler.source>
+		<maven.compiler.target>15</maven.compiler.target>
 	</properties>
 
 	<dependencies>
@@ -16,31 +16,93 @@
 			<artifactId>maven-compiler-plugin</artifactId>
 			<version>3.8.1</version>
 		</dependency>
+
+
+		<dependency>
+			<groupId>de.mirkosertic.bytecoder</groupId>
+			<artifactId>bytecoder-core</artifactId>
+			<version>2021-11-02</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.mirkosertic.bytecoder</groupId>
+			<artifactId>bytecoder.api</artifactId>
+			<version>2021-11-02</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.mirkosertic.bytecoder</groupId>
+			<artifactId>java.base</artifactId>
+			<version>2021-11-02</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.mirkosertic.bytecoder</groupId>
+			<artifactId>java.logging</artifactId>
+			<version>2021-11-02</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.mirkosertic.bytecoder</groupId>
+			<artifactId>java.xml</artifactId>
+			<version>2021-11-02</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.mirkosertic.bytecoder</groupId>
+			<artifactId>java.datatransfer</artifactId>
+			<version>2021-11-02</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.mirkosertic.bytecoder</groupId>
+			<artifactId>java.desktop</artifactId>
+			<version>2021-11-02</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.mirkosertic.bytecoder</groupId>
+			<artifactId>bytecoder.web</artifactId>
+			<version>2021-11-02</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.mirkosertic.bytecoder</groupId>
+			<artifactId>bytecoder.vue</artifactId>
+			<version>2021-11-02</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.mirkosertic.bytecoder</groupId>
+			<artifactId>bytecoder.opencl</artifactId>
+			<version>2021-11-02</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>de.mirkosertic.bytecoder</groupId>
-					<artifactId>bytecoder-mavenplugin</artifactId>
-					<version>2021-11-02</version>
-					<configuration>
-						<mainClass>bytecodermaventest.HelloWorld</mainClass>
-						<backend>js</backend>
-						<enableExceptionHandling>true</enableExceptionHandling>
-						<debugOutput>true</debugOutput>
-						<optimizationLevel>ALL</optimizationLevel>
-					</configuration>
-					<executions>
-						<execution>
-							<goals>
-								<goal>compile</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-			</plugins>
-		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>de.mirkosertic.bytecoder</groupId>
+				<artifactId>bytecoder-mavenplugin</artifactId>
+				<version>2021-11-02</version>
+				<configuration>
+					<mainClass>bytecodermaventest.HelloWorld</mainClass>
+					<backend>wasm</backend>
+					<!--<backend>js</backend>-->
+					<enableExceptionHandling>true</enableExceptionHandling>
+					<optimizationLevel>ALL</optimizationLevel>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+
 	</build>
 </project>
