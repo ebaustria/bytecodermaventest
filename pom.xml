@@ -91,6 +91,7 @@
 					<backend>wasm</backend>
 					<!--<backend>js</backend>-->
 					<enableExceptionHandling>true</enableExceptionHandling>
+					<debugOutput>true</debugOutput>
 					<optimizationLevel>ALL</optimizationLevel>
 				</configuration>
 				<executions>
